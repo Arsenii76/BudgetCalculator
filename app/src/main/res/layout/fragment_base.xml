@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1F24"
+    android:focusableInTouchMode="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textViewWork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="19dp"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:textColor="#FFFFFF"
+        android:text="Разработка"
+        app:layout_constraintBottom_toBottomOf="@+id/rcViewWidget"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="19dp"
+        android:gravity="start"
+        android:text="Дизайн и идея"
+        android:visibility="gone"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rcViewWidget"
+        app:layout_constraintStart_toStartOf="@+id/textViewElizDry" />
+
+
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="19dp"
+        android:text="группа в telegram"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/textViewArsenyiAntonov"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextSalary"
+        android:layout_width="120dp"
+        android:inputType="number"
+        android:maxLength="6"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textSize="28sp"
+        android:imeOptions="actionDone"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/montserrat_bold"
+        android:background="@drawable/edit_text_background_salary"
+        app:layout_constraintBaseline_toBaselineOf="@id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="твой доход:"
+        android:textColor="#E6E7EB"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="₽"
+        android:textColor="#E6E7EB"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextSalary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextSalary" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcViewWidget"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="110dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="130dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <LinearLayout
+            android:id="@+id/bottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rc_view_budget_background"
+            android:orientation="vertical"
+            app:behavior_hideable="false"
+            app:behavior_peekHeight="100dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <View
+                android:layout_width="88dp"
+                android:layout_height="6dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="11dp"
+                android:background="@drawable/separator_bottom_sheet" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never">
+
+                <LinearLayout
+                    android:id="@+id/addNewCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcViewBudget"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:fontFamily=""
+                            android:text="+ Добавить"
+                            android:textColor="#D1D2DA"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="0.0 %"
+                            android:textColor="#D1D2DA"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="0 ₽"
+                            android:textColor="#D1D2DA"
+                            android:textSize="18sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <TextView
+        android:id="@+id/tvShowWidget"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Показать виджеты"
+        android:textColor="#D1D2DA"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout2"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/revertData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вернуть значения"
+        android:textColor="#D1D2DA"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout2"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSalary" />
+    <TextView
+        android:id="@+id/textViewMoneyApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FEF58C"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="22dp"
+        android:text="fdsfdsfsd"
+        />
+
+    <TextView
+        android:id="@+id/textViewArsenyiAntonov"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Арсений Антонов"
+        android:textColor="#FEF58C"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        android:layout_marginStart="22dp"
+        app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/textViewElizDry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Елизавета Дружинина"
+        android:textColor="#FEF58C"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/textViewWork"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
